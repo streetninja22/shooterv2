@@ -40,3 +40,6 @@ link_directories(${SDL_TTF_LIBRARY_DIR})
 
 
 target_link_libraries(${PROGRAM_NAME} ${SDL2_LIBRARY}; ${SDL2_IMAGE_LIBRARY}; ${SDL2_TTF_LIBRARY}; ${SDL2_MIXER_LIBRARY})
+
+
+target_compile_definitions(${PROGRAM_NAME} PRIVATE DEBUG_MAIN_DIR="C:/Documents/Projects/Game/")

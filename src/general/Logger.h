@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-//TODO: documentation comments, exception handling
+//TODO: exception handling
 
 class Logger
 {
@@ -20,9 +20,12 @@ private:
 
     static const unsigned int M_MAX_TIME_STRING_LENGTH = 100;
 
-
+	/* Returns the current date and time as a string
+	*/
     std::string getTime();
 
+    /* Returns a the current date and time in a format safe to use for filenames
+    */
     std::string getFileSafeTime();
 
 public:

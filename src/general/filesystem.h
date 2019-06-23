@@ -12,6 +12,9 @@ std::string getDataFile(std::string file = "");
 */
 std::string getCurrentWorkingDir();
 
+/* Returns the full path for a file within the game directory
+* param file The filepath, relative to the main game directory.
+*/
 std::string getFile(std::string file);
 
 #endif

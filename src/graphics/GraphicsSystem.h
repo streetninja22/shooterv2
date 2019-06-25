@@ -11,7 +11,7 @@ namespace graphics
 	class GraphicsSystem : public System
 	{
 
-	public
+	public:
 		void update() override;
 
 	};

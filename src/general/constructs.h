@@ -1,6 +1,8 @@
 #ifndef CONSTRUCTS_H
 #define CONSTRUCTS_H
 
+#include <SDL.h>
+
 struct Vector2
 {
     double x;
@@ -35,6 +37,8 @@ struct RectInt
     Vector2Int size;
 };
 
+
+SDL_Rect RectIntToSDLRect(RectInt a);
 
 
 #endif

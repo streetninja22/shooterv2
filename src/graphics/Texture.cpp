@@ -14,10 +14,10 @@ namespace graphics
         SDL_QueryTexture(m_texture, nullptr, nullptr, &(m_size.x), &(m_size.y));
 	}
 
-    Texture::Texture(const Texture& texture) : m_texture(texture.getTexture()), m_size(texture.getSize())
-    {
-
-    }
+	Texture::~Texture()
+	{
+        SDL_DestroyTexture(m_texture);
+	}
 
 
     Vector2Int Texture::getSize() const
@@ -40,5 +40,28 @@ namespace graphics
         return m_texture;
     }
 
+
+
+    Sprite::Sprite() : Texture()
+    {
+
+    }
+
+    Sprite::Sprite(SDL_Texture* texture, RectInt sourceRect) : Texture(texture), m_sourceRect(sourceRect)
+    {
+
+    }
+
+    Sprite::Sprite(Texture texture, RectInt sourceRect) : Texture(texture), m_sourceRect(sourceRect)
+    {
+
+    }
+
+
+
+    RectInt Sprite::getSourceRect()
+    {
+		return m_sourceRect;
+    }
 
 }

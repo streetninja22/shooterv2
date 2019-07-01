@@ -16,7 +16,7 @@ namespace graphics
 	public:
 		Texture();
 		Texture(SDL_Texture* texture);
-		Texture(const Texture&);
+        ~Texture();
 
 		Vector2Int getSize() const;
 		int getSizeX() const;
@@ -24,6 +24,20 @@ namespace graphics
 
 		SDL_Texture* getTexture() const;
 	};
+
+
+
+    class Sprite : public Texture
+    {
+        RectInt m_sourceRect;
+
+	public:
+        Sprite();
+        Sprite(SDL_Texture* texture, RectInt sourceRect);
+        Sprite(Texture texture, RectInt sourceRect);
+
+        RectInt getSourceRect();
+    };
 
 }
 

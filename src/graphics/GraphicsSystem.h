@@ -12,6 +12,9 @@ namespace graphics
 	{
 
 	public:
+        GraphicsSystem();
+        ~GraphicsSystem();
+
 		void update() override;
 
 	};

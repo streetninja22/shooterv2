@@ -7,6 +7,13 @@ struct Vector2
     double y;
 };
 
+struct Vector2Int
+{
+    int x;
+    int y;
+};
+
+
 typedef Vector2 Point_t;
 
 Vector2 operator+(Vector2, Vector2);
@@ -22,6 +29,11 @@ struct Rect
     Vector2 size;
 };
 
+struct RectInt
+{
+    Vector2Int position;
+    Vector2Int size;
+};
 
 
 

@@ -1,6 +1,6 @@
 #include "general/Command.h"
 
-void Command::operator()
+void Command::operator()()
 {
 	execute();
 }

@@ -1,6 +1,10 @@
 #include "Logger.h"
 
+
+//static member declarations
 std::string Logger::m_logDirPath;
+
+std::ofstream m_logFile;
 
 const unsigned int M_MAX_TIME_STRING_LENGTH = 100;
 

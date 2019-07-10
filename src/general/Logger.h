@@ -11,6 +11,8 @@
 
 //TODO: exception handling
 
+typedef std::string str;
+
 class Logger
 {
 private:

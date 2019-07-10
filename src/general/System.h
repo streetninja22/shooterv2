@@ -4,6 +4,7 @@
 
 class System
 {
+protected:
     Logger* m_logger;
 
 public:

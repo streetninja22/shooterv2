@@ -6,6 +6,8 @@ namespace graphics
 	GraphicsSystem::GraphicsSystem(Logger* m_logger, std::string windowTitle, int windowSizeX, int windowSizeY, WindowMode mode, int display)
 	: System(m_logger)
 	{
+		std::cout << m_logger << "\n";
+		m_logger->log("Initializing Graphics System");
         if (SDL_Init(SDL_INIT_VIDEO) != 0)
             m_logger->log(str("Failed to initialize SDL video: ") + str(SDL_GetError()));
         else

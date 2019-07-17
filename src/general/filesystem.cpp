@@ -36,12 +36,12 @@ std::string getCurrentWorkingDir()
 }
 #endif // DEBUG_MODE
 
-std::string getDataFile(std::string file)
+std::string getDataFile(path_t file)
 {
 	return getCurrentWorkingDir() + "data/" + file;
 }
 
-std::string getFile(std::string file)
+std::string getFile(path_t file)
 {
     return getCurrentWorkingDir() + file;
 }

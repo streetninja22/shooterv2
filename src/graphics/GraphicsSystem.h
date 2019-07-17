@@ -5,6 +5,8 @@
 #include "general/System.h"
 #include "general/constructs.h"
 #include "general/Logger.h"
+#include "general/filesystem.h"
+#include "graphics/Texture.h"
 
 namespace graphics
 {
@@ -28,6 +30,12 @@ namespace graphics
         ~GraphicsSystem();
 
 		void update() override;
+
+		Texture loadTexture(path_t path);
+
+        void renderTexture(Texture texture, Vector2Int position);
+
+        void renderSprite(Sprite sprite, Vector2Int position);
 
 	};
 

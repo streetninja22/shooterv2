@@ -4,7 +4,7 @@ project(ShooterGame)
 
 set(PROGRAM_NAME "ShooterGame")
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -42,4 +42,4 @@ link_directories(${SDL_TTF_LIBRARY_DIR})
 target_link_libraries(${PROGRAM_NAME} ${SDL2_LIBRARY}; ${SDL2_IMAGE_LIBRARY}; ${SDL2_TTF_LIBRARY}; ${SDL2_MIXER_LIBRARY})
 
 
-target_compile_definitions(${PROGRAM_NAME} PRIVATE DEBUG_MAIN_DIR="C:/Documents/Projects/Game/")
+target_compile_definitions(${PROGRAM_NAME} PRIVATE DEBUG_MAIN_DIR="/home/tristan/Documents/programs/Game/")

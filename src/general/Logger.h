@@ -18,17 +18,17 @@ class Logger
 private:
     static std::string m_logDirPath;
 
-    std::ofstream m_logFile;
+    static std::ofstream m_logFile;
 
     static const unsigned int M_MAX_TIME_STRING_LENGTH = 100;
 
 	/* Returns the current date and time as a string
 	*/
-    std::string getTime();
+    static std::string getTime();
 
     /* Returns a the current date and time in a format safe to use for filenames
     */
-    std::string getFileSafeTime();
+    static std::string getFileSafeTime();
 
 public:
     Logger(std::string logDirPath);
@@ -37,7 +37,7 @@ public:
     /* Writes given data to end of log file, accompanied with the time of the function's call
     *
     */
-    void log(std::string logData);
+    static void log(std::string logData);
 
 };
 

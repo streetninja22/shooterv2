@@ -24,7 +24,7 @@ namespace graphics
 		SDL_Renderer* m_renderer;
 
 	public:
-        GraphicsSystem(Logger* logger, std::string windowName, int windowSizeX, int windowSizeY, WindowMode mode, int display=0);
+        GraphicsSystem(std::string windowName, int windowSizeX, int windowSizeY, WindowMode mode, int display=0);
         ~GraphicsSystem();
 
 		void update() override;

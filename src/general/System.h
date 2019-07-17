@@ -8,7 +8,7 @@ protected:
     Logger* m_logger;
 
 public:
-	System(Logger* logger) : m_logger(logger)
+	System()
 	{
 	}
 

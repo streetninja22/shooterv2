@@ -10,6 +10,7 @@ namespace graphics
             Logger::log(str("Failed to initialize SDL video: ") + str(SDL_GetError()));
         else
 			Logger::log("Initialized SDL video successfully");
+		IMG_Init(IMG_INIT_PNG);
 
 		//place window in center of screen
 		SDL_DisplayMode displayMode;
@@ -45,6 +46,15 @@ namespace graphics
 	{
 
 	}
+
+    Texture GraphicsSystem::loadTexture(path_t path)
+    {
+        SDL_Surface* surface = IMG_Load(path);
+        if (surface == NULL)
+		{
+			Logger:log(str("Failed to load "))
+		}
+    }
 
 
 }

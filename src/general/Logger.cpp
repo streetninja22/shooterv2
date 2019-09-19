@@ -10,7 +10,7 @@ const unsigned int M_MAX_TIME_STRING_LENGTH = 100;
 
 
 std::string Logger::getTime()
-    {
+{
         const time_t time = std::time(nullptr);
         char timeString[M_MAX_TIME_STRING_LENGTH];
         //convert unix time stamp to standard time format
@@ -46,3 +46,19 @@ std::string Logger::getTime()
 			newLine.append("\n");
         m_logFile.write(newLine.c_str(), newLine.size());
     }
+
+	void Logger::logError(std::string logData)
+	{
+		std::string newLine = getTime() + ": ERROR: " + logData;
+		if (newLine.back() != '\n')
+			newLine.append("\n");
+		m_logFile.write(newLine.c_str(), newLine.size());
+	}
+
+	void Logger::logSDLError(std::string logData)
+	{
+		std::string newLine = getTime() + ": ERROR: " + logData + SDL_GetError();
+		if (newLine.back() != '\n')
+			newLine.append("\n");
+		m_logFile.write(newLine.c_str(), newLine.size());
+	}

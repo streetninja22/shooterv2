@@ -6,6 +6,8 @@
 #include <ctime>
 #include "filesystem.h"
 
+#include <SDL2/SDL.h>
+
 
 #include <iostream>
 
@@ -38,6 +40,16 @@ public:
     *
     */
     static void log(std::string logData);
+
+	/* Writes given data to end of log file, accompanied with the time of the function's call and the suffix for an error message
+	*
+	*/
+	static void logError(std::string logData);
+
+	/* Writes given data to end of log file, accompanied with the time of the function's call, the suffix for an error message, and lead by SDL error output
+	*
+	*/
+	static void logSDLError(std::string logData);
 
 };
 

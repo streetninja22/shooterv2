@@ -57,7 +57,7 @@ std::string Logger::getTime()
 
 	void Logger::logSDLError(std::string logData)
 	{
-		std::string newLine = getTime() + ": ERROR: " + logData + SDL_GetError();
+		std::string newLine = getTime() + ": ERROR: " + logData + ": " + SDL_GetError();
 		if (newLine.back() != '\n')
 			newLine.append("\n");
 		m_logFile.write(newLine.c_str(), newLine.size());

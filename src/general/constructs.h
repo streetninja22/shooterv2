@@ -1,7 +1,7 @@
 #ifndef CONSTRUCTS_H
 #define CONSTRUCTS_H
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 struct Vector2
 {

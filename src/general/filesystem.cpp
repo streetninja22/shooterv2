@@ -17,6 +17,7 @@
 
 #define STRINGIZE(x) #x
 
+
 std::string getCurrentWorkingDir()
 {
 	return std::string(DEBUG_MAIN_DIR);

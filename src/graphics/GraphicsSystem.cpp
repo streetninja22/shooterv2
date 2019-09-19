@@ -49,12 +49,29 @@ namespace graphics
 
     Texture GraphicsSystem::loadTexture(path_t path)
     {
-        SDL_Surface* surface = IMG_Load(path);
+        SDL_Surface* surface = IMG_Load(path.c_str());
         if (surface == NULL)
 		{
-			Logger:log(str("Failed to load "))
+			Logger::logSDLError("Failed to load texture");
 		}
+
+		SDL_Texture* textureTemp = SDL_CreateTextureFromSurface(m_renderer, surface);
+		if (textureTemp == NULL)
+		{
+			Logger::logSDLError("Failed to load texture");
+		}
+
+		return Texture(textureTemp);
     }
 
+	void renderTexture(Texture texture, Vector2Int position)
+	{
+
+	}
+
+	void renderSprite(Sprite sprite, Vector2Int position)
+	{
+
+	}
 
 }

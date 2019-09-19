@@ -32,4 +32,6 @@ SDL_Rect RectIntToSDLRect(RectInt a)
     b.y = a.position.y;
     b.w = a.size.x;
     b.h = a.size.y;
+
+	return b;
 }

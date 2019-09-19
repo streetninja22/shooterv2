@@ -1,8 +1,8 @@
 #ifndef GRAPHICSSYSTEM_H
 #define GRAPHICSSYSTEM_H
 
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "general/System.h"
 #include "general/constructs.h"
 #include "general/Logger.h"

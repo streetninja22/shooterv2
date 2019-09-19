@@ -1,0 +1,9 @@
+message("Getting source files in ${SOURCE_DIR}")
+
+file(GLOB HEADERS "${SOURCE_DIR}/*.h")
+file(GLOB SOURCES "${SOURCE_DIR}/*.cpp")
+
+set(HEADERS_GENERAL ${HEADERS} PARENT_SCOPE)
+set(SOURCES_GENERAL ${SOURCES} PARENT_SCOPE)
+
+

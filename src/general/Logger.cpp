@@ -36,6 +36,11 @@ std::string Logger::getTime()
     }
 
 
+	void Logger::close()
+	{
+		m_logFile.close();
+	}
+
     /* Writes given data to end of log file, accompanied with the time of the function's call
     *
     */
@@ -44,21 +49,18 @@ std::string Logger::getTime()
         std::string newLine = getTime() + ": " + logData;
 		if (newLine.back() != '\n')
 			newLine.append("\n");
-        m_logFile.write(newLine.c_str(), newLine.size());
+		m_logFile << newLine;
+		m_logFile.flush();
     }
 
 	void Logger::logError(std::string logData)
 	{
-		std::string newLine = getTime() + ": ERROR: " + logData;
-		if (newLine.back() != '\n')
-			newLine.append("\n");
-		m_logFile.write(newLine.c_str(), newLine.size());
+		std::string newLine =  ": ERROR: " + logData;
+		log(newLine);
 	}
 
 	void Logger::logSDLError(std::string logData)
 	{
-		std::string newLine = getTime() + ": ERROR: " + logData + ": " + SDL_GetError();
-		if (newLine.back() != '\n')
-			newLine.append("\n");
-		m_logFile.write(newLine.c_str(), newLine.size());
+		std::string newLine =  logData + ": " + SDL_GetError();
+		logError(newLine);
 	}

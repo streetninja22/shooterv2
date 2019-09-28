@@ -35,6 +35,10 @@ private:
 public:
     Logger(std::string logDirPath);
 
+	/* Closes the log file. Use when program is finished running
+	* 
+	*/
+	static void close();
 
     /* Writes given data to end of log file, accompanied with the time of the function's call
     *

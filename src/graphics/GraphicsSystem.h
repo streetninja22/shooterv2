@@ -32,11 +32,50 @@ namespace graphics
 
 		void update() override;
 
+		/* Clears the screen then renders a new frame
+		*
+		*/
+		void updateScreen();
+
+		/* Loads a texture from a filepath. Returns the texture
+		*
+		* @param path The file path for texture to load
+		*/
 		Texture loadTexture(path_t path);
 
+		/* Renders a texture to the screen at the given position
+		*
+		* @param texture The texture to render
+		* @param position The position to render the texture at on the screen (in pixels)
+		*/
         void renderTexture(Texture texture, Vector2Int position);
 
+		/* Renders a texture within the given rectangle, resizing it to fit
+		*
+		* @param texture The texture to render
+		* @Param dstRect The rectangle to render the texture within. The texture will take the rectangle's width and height
+		*/
+		void renderTexture(Texture texture, RectInt dstRect);
+
+		/* Renders a given sprite at the position specified
+		*
+		* @param sprite The sprite to render
+		* @param position The position to render the sprite at
+		*/
         void renderSprite(Sprite sprite, Vector2Int position);
+
+		/* Renders a given sprite within the given rectangle, resizing it to fit
+		*
+		* @param sprite The sprite to render
+		* @param dstRect The rectangle to render the sprite within. The sprite will take the rectangle's width and height
+		*/
+		void renderSprite(Sprite sprite, RectInt dstRect);
+
+		/* Clears the screen
+		*
+		*/
+		void clear();
+
 
 	};
 

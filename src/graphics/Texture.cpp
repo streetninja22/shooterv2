@@ -14,11 +14,6 @@ namespace graphics
         SDL_QueryTexture(m_texture, nullptr, nullptr, &(m_size.x), &(m_size.y));
 	}
 
-	Texture::~Texture()
-	{
-		
-	}
-
 
     Vector2Int Texture::getSize() const
     {

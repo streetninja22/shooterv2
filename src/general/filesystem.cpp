@@ -37,6 +37,7 @@ std::string getCurrentWorkingDir()
 }
 #endif // DEBUG_MODE
 
+
 std::string getDataFile(path_t file)
 {
 	return getCurrentWorkingDir() + "data/" + file;

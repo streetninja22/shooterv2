@@ -38,7 +38,7 @@ struct RectInt
 };
 
 
-SDL_Rect RectIntToSDLRect(RectInt a);
+SDL_Rect* RectIntToSDLRect(RectInt a);
 
 
 #endif

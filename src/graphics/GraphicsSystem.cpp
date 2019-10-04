@@ -50,8 +50,8 @@ namespace graphics
 
 	void GraphicsSystem::updateScreen()
 	{
-		SDL_RenderClear(m_renderer);
 		SDL_RenderPresent(m_renderer);
+		SDL_RenderClear(m_renderer);
 	}
 
 

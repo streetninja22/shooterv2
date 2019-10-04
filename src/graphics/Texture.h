@@ -19,10 +19,12 @@ namespace graphics
         ~Texture();
 
 		Vector2Int getSize() const;
-		int getSizeX() const;
-		int getSizeY() const;
+		int getWidth() const;
+		int getHeight() const;
 
 		SDL_Texture* getTexture() const;
+
+		void clearTexture();
 	};
 
 

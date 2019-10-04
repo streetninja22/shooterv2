@@ -16,7 +16,7 @@ namespace graphics
 
 	Texture::~Texture()
 	{
-        SDL_DestroyTexture(m_texture);
+		
 	}
 
 
@@ -25,12 +25,12 @@ namespace graphics
         return m_size;
     }
 
-    int Texture::getSizeX() const
+    int Texture::getWidth() const
     {
         return m_size.x;
     }
 
-    int Texture::getSizeY() const
+    int Texture::getHeight() const
     {
         return m_size.y;
     }
@@ -40,6 +40,10 @@ namespace graphics
         return m_texture;
     }
 
+	void Texture::clearTexture()
+	{
+		SDL_DestroyTexture(m_texture);
+	}
 
 
     Sprite::Sprite() : Texture()

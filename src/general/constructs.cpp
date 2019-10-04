@@ -25,6 +25,13 @@ Vector2 operator*(Vector2 a, double b)
 	return Vector2{a.x * b, a.y * b};
 }
 
+Vector2& operator+=(Vector2& a, Vector2 b)
+{
+	a.x += b.x;
+	a.y += b.y;
+	return a;
+}
+
 SDL_Rect* RectIntToSDLRect(RectInt a)
 {
     SDL_Rect* b = new SDL_Rect;

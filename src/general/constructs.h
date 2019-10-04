@@ -24,6 +24,8 @@ Vector2 operator*(Vector2, Vector2);
 Vector2 operator/(Vector2, Vector2);
 Vector2 operator*(Vector2, double);
 
+Vector2& operator+=(Vector2&, Vector2);
+
 
 struct Rect
 {

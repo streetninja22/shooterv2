@@ -2,6 +2,7 @@
 #define PHYSICSCOMPONENT_H
 
 #include "general/constructs.h"
+#include "PhysicsSystem.h"
 
 namespace physics
 {
@@ -14,11 +15,24 @@ namespace physics
 		Vector2 m_acceleration;
 
 	public:
+		/* Default constructor; creates a blank instance of PhysicsComponent
+		*/
 		PhysicsComponent();
 
-		/* Updates the position and velocity of the object
+		/* Creates an instance of PhysicsComponent with the given properties
+		*
+		* @param position The initial position which the object is located at
+		* @param size The X/Y size of the object
+		* @param velocity The initial velocity of the object
+		* @param acceleration The object's acceleration
 		*/
-		void update();
+		PhysicsComponent(Vector2 position, Vector2 size, Vector2 velocity = { 0, 0 }, Vector2 acceleration = { 0, 0 });
+
+		/* Updates the position and velocity of the object
+		*
+		* @param time The time passed since the last update
+		*/
+		void update(Uint32 time);
 		
 		Vector2 getPosition();
 		Vector2 getSize();

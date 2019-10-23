@@ -8,11 +8,16 @@ namespace physics
 		
 	}
 
-
-	void PhysicsComponent::update()
+	PhysicsComponent::PhysicsComponent(Vector2 position, Vector2 size, Vector2 velocity, Vector2 acceleration) : m_position(position), m_size(size), m_velocity(velocity) , m_acceleration(acceleration)
 	{
-		m_velocity += m_acceleration;
-		m_position += m_velocity;
+
+	}
+
+
+	void PhysicsComponent::update(Uint32 time)
+	{
+		m_velocity += m_acceleration * time * TIME_SCALE_MULTIPLIER;
+		m_position += m_velocity * time * TIME_SCALE_MULTIPLIER;
 	}
 
 

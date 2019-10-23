@@ -2,6 +2,7 @@
 #define CONSTRUCTS_H
 
 #include <SDL2/SDL.h>
+#include <string>
 
 struct Vector2
 {
@@ -25,6 +26,8 @@ Vector2 operator/(Vector2, Vector2);
 Vector2 operator*(Vector2, double);
 
 Vector2& operator+=(Vector2&, Vector2);
+
+std::string toString(const Vector2& vector);
 
 
 struct Rect

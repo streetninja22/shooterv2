@@ -32,6 +32,11 @@ Vector2& operator+=(Vector2& a, Vector2 b)
 	return a;
 }
 
+std::string toString(const Vector2& vector)
+{
+	return std::to_string(vector.x) + ", " + std::to_string(vector.y);
+}
+
 SDL_Rect* RectIntToSDLRect(RectInt a)
 {
     SDL_Rect* b = new SDL_Rect;

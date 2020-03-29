@@ -16,8 +16,8 @@ namespace physics
 
 	void PhysicsComponent::update(Uint32 time)
 	{
-		m_velocity += m_acceleration * time * TIME_SCALE_MULTIPLIER;
-		m_position += m_velocity * time * TIME_SCALE_MULTIPLIER;
+		m_velocity += m_acceleration * time * G_TIME_SCALE_MULTIPLIER;
+		m_position += m_velocity * time * G_TIME_SCALE_MULTIPLIER;
 	}
 
 

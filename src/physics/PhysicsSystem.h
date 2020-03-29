@@ -6,11 +6,12 @@
 namespace physics
 {
 	//Multiplier used on time-dependant operations to convert milliseconds to seconds
-	const double TIME_SCALE_MULTIPLIER = 0.001;
+	const double G_TIME_SCALE_MULTIPLIER = 0.001;
 
 
 	class PhysicsSystem : public System
 	{
+
 
 	public:
 		PhysicsSystem();

@@ -8,6 +8,8 @@
 
 int main(int argc, char** argv)
 {
+	std::cout << "Hello world!\n";
+	std::cout << getCurrentWorkingDir() << "\n";
 	Logger* logger = new Logger(getCurrentWorkingDir());
 
     Logger::log("Starting");
@@ -17,7 +19,7 @@ int main(int argc, char** argv)
 
 	Uint32 time = SDL_GetTicks();
 
-	graphics::Texture reimu = gfx->loadTexture(getDataFile("reimuidle.png"));
+	graphics::Texture reimu = gfx->loadTexture(getDataFile("sprite.png"));
 
 	while (true)
 	{
@@ -27,6 +29,9 @@ int main(int argc, char** argv)
 
 		if (delay < 16)
 			SDL_Delay(16 - delay);
+		
+		SDL_Event* event;
+		SDL_PollEvent(event); //currently only here to keep window visible on mac
 
 		phys->update(16);
 

@@ -4,6 +4,11 @@
 #include <SDL2/SDL.h>
 #include <string>
 
+typedef Uint32 ticks_t;
+
+//Multiplier used on time-dependant operations to convert milliseconds to seconds
+const double G_MS_TO_S_MULTIPLIER = 0.001;
+
 struct Vector2
 {
     double x;

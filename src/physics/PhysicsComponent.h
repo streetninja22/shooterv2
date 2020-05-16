@@ -32,7 +32,7 @@ namespace physics
 		*
 		* @param time The time passed since the last update
 		*/
-		void update(Uint32 time);
+		void update(ticks_t time);
 		
 		Vector2 getPosition();
 		Vector2 getSize();

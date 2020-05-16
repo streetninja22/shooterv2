@@ -23,8 +23,8 @@ int main(int argc, char** argv)
 
 	while (true)
 	{
-		Uint32 newTime = SDL_GetTicks();
-		Uint32 delay = newTime - time;
+		ticks_t newTime = SDL_GetTicks();
+		ticks_t delay = newTime - time;
 		time = newTime;
 
 		if (delay < 16)

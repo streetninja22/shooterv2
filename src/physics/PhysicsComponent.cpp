@@ -14,10 +14,10 @@ namespace physics
 	}
 
 
-	void PhysicsComponent::update(Uint32 time)
+	void PhysicsComponent::update(ticks_t time)
 	{
-		m_velocity += m_acceleration * time * G_TIME_SCALE_MULTIPLIER;
-		m_position += m_velocity * time * G_TIME_SCALE_MULTIPLIER;
+		m_velocity += m_acceleration * time * G_MS_TO_S_MULTIPLIER;
+		m_position += m_velocity * time * G_MS_TO_S_MULTIPLIER;
 	}
 
 

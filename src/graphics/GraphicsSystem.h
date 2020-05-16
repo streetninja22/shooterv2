@@ -8,6 +8,7 @@
 #include "general/Logger.h"
 #include "general/filesystem.h"
 #include "graphics/Texture.h"
+#include "graphics/ParticleManager.h"
 
 namespace graphics
 {
@@ -42,6 +43,8 @@ namespace graphics
 		* @param path The file path for texture to load
 		*/
 		Texture loadTexture(path_t path);
+		
+		
 
 		/* Renders a texture to the screen at the given position
 		*

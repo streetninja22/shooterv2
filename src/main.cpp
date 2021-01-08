@@ -4,6 +4,7 @@
 #include "general/filesystem.h"
 #include "physics/PhysicsComponent.h"
 #include "graphics/GraphicsSystem.h"
+#include "graphics/ParticleManager.h"
 
 
 int main(int argc, char** argv)
@@ -20,6 +21,14 @@ int main(int argc, char** argv)
 	Uint32 time = SDL_GetTicks();
 
 	graphics::Texture reimu = gfx->loadTexture(getDataFile("sprite.png"));
+	
+	
+	graphics::ParticleManager* particleManager = new graphics::ParticleManager(256);
+	
+	for (int index = 0; index < 15; ++index)
+	{
+		particleManager->create({static_cast<double>(3 * index + 1), 3}, {0, 0}, {0, 2}, {255, 255, 255, 255}, {2, 2}, 256);
+	}
 
 	while (true)
 	{

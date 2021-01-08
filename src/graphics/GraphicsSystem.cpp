@@ -29,7 +29,8 @@ namespace graphics
 			Logger::log(str("Failed to create SDL_Renderer: ") + str(SDL_GetError()));
 		else
 			Logger::log("Created SDL_Renderer successfully");
-
+		
+		Logger::log("Finished initializing Graphics System successfully");
 	}
 
 	GraphicsSystem::~GraphicsSystem()

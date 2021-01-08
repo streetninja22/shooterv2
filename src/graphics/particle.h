@@ -3,12 +3,14 @@
 
 #include "general/constructs.h"
 #include "graphics/graphicsgeneral.h"
+#include "general/Logger.h"
 
 namespace graphics
 {
 
 	class Particle
 	{
+		//the number of frames before the particle despawns
 		ticks_t m_framesLeft;
 		
 		//union makes particle store its physical data when alive and a pointer to the next in the list of dead particles when dead.
@@ -16,7 +18,8 @@ namespace graphics
 		{
 			struct
 			{
-				Vector2 m_position;
+				//kinematic properties measured in pixels and seconds
+				Point_t m_position;
 				Vector2 m_velocity;
 				Vector2 m_acceleration;
 				
@@ -32,6 +35,7 @@ namespace graphics
 		};
 		
 	public:
+	
 		/* Initializes empty particle
 		 */
 		Particle();
@@ -53,21 +57,26 @@ namespace graphics
 		 */ 
 		Particle(Particle* nextDead);
 		
-		~Particle();
-		
 		/* Updates the state of the particle, including position as well as lifetime
 		 * 
 		 * @param timeElapsed the time elapsed since the last upate in frames
 		 */
 		void update(ticks_t timeElapsed);
 		
-		/* Returns true if the particle has a remaining lifetime of 0, otherwise returns 0.
+		/* Returns true if the particle has a remaining lifetime of 0, otherwise returns false.
 		 */ 
 		bool isDead();
 		
 		/* Returns the next dead particle in the list if this particle is dead. If it is not dead, returns nullptr.
 		 */ 
 		Particle* nextDead();
+		
+		/* Sets the dead particle in the list which is pointed to
+		 * 
+		 * @param nextDead The new next dead particle
+		 */ 
+		void setNextDead(Particle* nextDead);
+		
 		
 	};
 

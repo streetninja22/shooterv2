@@ -7,7 +7,8 @@ namespace graphics
 	{
 	}
 	
-	Particle::Particle(Vector2 position, Vector2 velocity, Vector2 acceleration, color_t color, Vector2 size, ticks_t lifetime) : m_framesLeft(lifetime)
+	Particle::Particle(Vector2 position, Vector2 velocity, Vector2 acceleration, color_t color, Vector2 size, ticks_t lifetime, Sprite sprite, color_t rectColor, Vector2 rectSize, Vector2 spriteScale)
+	: m_framesLeft(lifetime). m_sprite(sprite), m_rectColor(rectColor), m_rectSize(rectSize), m_spriteScale(spriteScale)
 	{
 		m_live.m_position = position;
 		m_live.m_velocity = velocity;
@@ -49,5 +50,27 @@ namespace graphics
 		if (isDead())
 			m_nextDead = nextDead;
 	}
+	
+
+	color_t Particle::getRectColor()
+	{
+		return m_rectColor;
+	}
+		
+	Vector2 getRectSize()
+	{
+		return m_rectSize;
+	}
+		
+	Sprite getSprite()
+	{
+		return m_sprite;
+	}
+		
+	Vector2 getSpriteScale()
+	{
+		return m_spriteScale;
+	}
+		
 	
 };

@@ -10,7 +10,7 @@ namespace graphics
 		//the size of the particle pool measured in the number of Particle objects
 		Uint32 m_particlePoolSize;
 		
-		//the particle array memory block
+		//the first item of the particle array memory block
 		Particle* m_particleArray;
 		
 		//the head of the list of dead particles
@@ -46,6 +46,12 @@ namespace graphics
 	 * @param index The index of the particle within the array
 	 */ 
 	void kill(Uint32 index);
+	
+	/* Renders the given particle onto the screen
+	 * 
+	 * @param particle The particle to render
+	 */ 
+	void renderParticle(Particle* particle);
 	
 	};
 	

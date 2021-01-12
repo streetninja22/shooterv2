@@ -26,6 +26,7 @@ namespace graphics
 
 		SDL_Window* m_window;
 		SDL_Renderer* m_renderer;
+		
 
 	public:
         GraphicsSystem(std::string windowName, int windowSizeX, int windowSizeY, WindowMode mode, int display=0);

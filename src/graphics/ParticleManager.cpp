@@ -16,7 +16,6 @@ namespace graphics
 		for (Uint32 index = 0; index < particlePoolSize - 1; ++index)
 		{
 			*at(index) = Particle(at(index + 1));
-			std::cout << at(index)->nextDead() << "\n";
 		}
 		
 		m_deadListHead = at(0);
